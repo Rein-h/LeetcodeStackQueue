@@ -1,4 +1,8 @@
+"""Maximum Frequency Stack"""
+
+
 class FreqStack:
+    """Class for representing FreqStack"""
 
     def __init__(self):
         self.freq = {}
@@ -6,6 +10,9 @@ class FreqStack:
         self.maxfreq = 0
 
     def push(self, val: int) -> None:
+        """
+        Pushes an integer val onto the top of the stack.
+        """
         if val in self.freq:
             self.freq[val] += 1
         else:
@@ -21,6 +28,11 @@ class FreqStack:
 
 
     def pop(self) -> int:
+        """
+        Removes and returns the most frequent element in the stack.
+            If there is a tie for the most frequent element, the element
+            closest to the stack's top is removed and returned.
+        """
         max_val = self.stack[self.maxfreq].pop()
         self.freq[max_val] -= 1
 
