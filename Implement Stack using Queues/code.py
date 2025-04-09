@@ -17,4 +17,4 @@ class MyStack:
         return self.output[0]
 
     def empty(self) -> bool:
-        return self.output is None
+        return not self.output
